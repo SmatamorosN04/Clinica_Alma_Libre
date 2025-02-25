@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Videos - Clínica Psicológica</title>
+    <link rel="stylesheet" href="Videos.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>CLÍNICA PSICOLÓGICA</h1>
+        <button class="back-button" onclick="window.history.back()">Regresar</button>
+    </div>
+
+    <!-- Contenedor principal de contenido -->
+    <div class="main-content">
+        <div class="content-and-options">
+            
+            <!-- Sección de videos -->
+            <div class="articulos-content">
+                <h2>Videos</h2>
+                <ul id="videos-list">
+                    <!-- Los videos se agregarán aquí mediante el script -->
+                </ul>
+            </div>
+
+            <!-- Opciones de búsqueda y ordenamiento -->
+            <div class="option">
+                <button onclick="sortByUploadDate()">Ordenar por fecha de subida</button>
+                <button onclick="sortByTitle()">Ordenar por orden alfabético</button>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar..." onkeyup="searchVideos()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Clínica Psicológica. Todos los derechos reservados.</p>
+            <p><a href="mailto:contacto@clinica.com">Contacto</a></p>
+        </div>
+    </footer>
+    <!-- Script -->
+    <script src="videos.js"></script>
+</body>
+</html>

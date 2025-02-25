@@ -1,0 +1,258 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    font-size: 18px; /* Aumentamos el tamaño base de la fuente */
+}
+
+.header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem; /* Aumentamos el padding */
+}
+
+.header h1 {
+    font-size: 3rem; /* Aumentamos el tamaño del título */
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem; /* Aumentamos el padding */
+    gap: 3rem; /* Aumentamos el espacio entre las secciones */
+}
+
+.calendar-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Aumentamos el espacio entre los elementos */
+}
+
+.calendar-header {
+    background-color: #d5c7a1;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem; /* Aumentamos el padding */
+    border-radius: 10px;
+}
+
+.calendar-header h2 {
+    font-size: 2rem; /* Aumentamos el tamaño de la fuente */
+    color: #333;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas para los días de la semana */
+    gap: 2rem; /* Aumentamos el espacio entre las fechas */
+    width: 100%;
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #f0b3b3;
+    border-radius: 10px;
+    padding: 2rem; /* Aumentamos el tamaño de los días */
+    position: relative;
+    font-size: 1.5rem; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold;
+    cursor:  pointer;
+}
+
+.day::after {
+    content: "";
+    width: 12px; /* Aumentamos el tamaño del punto */
+    height: 12px;
+    background-color: #2c3e50;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.btn-citas {
+    padding: 1rem 2.5rem; /* Aumentamos el padding */
+    background-color: #d5c7a1;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-citas:hover {
+    background-color: #b3a188;
+}
+
+.info-panel {
+    flex: 1;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-left: none;
+    padding: 2rem; /* Aumentamos el padding */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem; /* Aumentamos el espacio entre los elementos */
+    font-size: 1.5rem; /* Aumentamos el tamaño de la fuente */
+}
+
+.info-panel p {
+    margin: 0;
+}
+
+.back-button {
+    display: block; /* Asegura que esté en una línea separada */
+    margin: 1.5rem auto 0; /* Aumentamos la separación superior */
+    padding: 1rem 2.5rem; /* Aumentamos el padding */
+    background-color: #d5c7a1;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #b3a188;
+    color: #fff;
+}
+
+#hora-cita, #fecha-cita {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-button {
+    background-color: #d5c7a1;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem; /* Aumentamos el tamaño del padding */
+    cursor: pointer;
+    font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #b3a188;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2.5rem; /* Aumentamos el padding */
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px; /* Aumentamos el tamaño máximo */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h3 {
+    font-size: 2rem; /* Aumentamos el tamaño de la fuente */
+    margin-bottom: 1.5rem; /* Aumentamos el margen inferior */
+    color: #2c3e50;
+}
+
+.time-button {
+    display: inline-block;
+    margin: 1rem 2rem; /* Aumentamos el margen entre los botones */
+    padding: 1rem 2rem; /* Aumentamos el padding */
+    background-color: #d5c7a1;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #333;
+}
+
+.time-button:hover {
+    background-color: #b3a188;
+    transform: scale(1.05);
+}
+
+.close-modal {
+    margin-top: 2rem; /* Aumentamos el margen superior */
+    padding: 1rem 2.5rem; /* Aumentamos el padding */
+    background-color: #f05d5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-modal:hover {
+    background-color: #c04444;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #2c3e50; /* Mismo color que el header */
+    color: #fff;
+    text-align: center;
+    padding: 2rem; /* Aumentamos el padding */
+    border-top: 4px solid #d5c7a1; /* Coincide con el borde del header */
+    width: 100%;
+}
+
+.footer-content a {
+    color: #d5c7a1; /* Color similar al de los enlaces en el menú */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+.footer p {
+    font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+    margin: 0.5rem 0;
+}

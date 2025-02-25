@@ -1,0 +1,179 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header styles */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Back button style */
+.back-button {
+    display: inline-block;
+    margin: 1rem;
+    padding: 10px 20px;
+    background-color: #d5c7a1;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.content-and-options {
+    display: flex;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Video section styles */
+.articulos-content {
+    flex: 3;
+}
+
+.articulos-content h2 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    
+}
+
+.articulos-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.articulos-content li {
+    margin-bottom: 2rem;
+}
+
+.articulos-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.articulos-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.articulos-content video, .articulos-content iframe {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Options section styles */
+.option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.option button {
+    background-color: #d5c7a1;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; /* Hacer que el botón ocupe todo el ancho */
+    text-align: left;
+}
+
+.option button:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.search-box {
+    width: 100%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+/* Footer styles */
+.footer {
+    background-color: #2c3e50; /* Mismo color que el header */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 4px solid #d5c7a1; /* Coincide con el borde del header */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content a {
+    color: #d5c7a1; /* Color similar al de los enlaces en el menú */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-and-options {
+        flex-direction: column;
+    }
+    
+    .option {
+        align-items: center;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+    }
+}

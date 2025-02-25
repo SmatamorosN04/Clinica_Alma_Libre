@@ -1,0 +1,148 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body and global styles */
+body {
+    display: flex;
+    flex-direction: column; /* Organización vertical */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+}
+
+/* Header styles */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.back-button {
+    margin: 1rem;
+    padding: 8px;
+    background-color: #d5c7a1;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 25px;
+}
+
+.back-button:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1; /* Ocupa el espacio restante entre header y footer */
+    padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.title-box h2 {
+    font-size: 5rem;
+    color: #333;
+    margin-left: 250px;
+}
+
+.content-and-options {
+    overflow: hidden; /* Limpiar el flotado */
+}
+
+.articulos-content {
+    width: 70%; /* Ancho de la columna de artículos */
+    float: left; /* Colocar a la izquierda */
+    font-size: 1.8rem;
+    padding: 1.2rem;
+}
+
+.articulos-content ul {
+    list-style-type: lower-roman;
+    padding-left: 10px;
+    line-height: 2.2;
+}
+
+.articulos-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.option {
+    width: 15%; /* Ancho de la columna de opciones */
+    float: right; /* Colocar a la derecha */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 1.8rem;
+    border-radius: 20px;
+    margin-right: 320px;
+}
+
+.botoncito {
+    font-size: 1.3rem;
+}
+
+.option button {
+    background-color: #d5c7a1;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Asegurar que los botones ocupen todo el ancho del contenedor */
+}
+
+.option button:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.search-box {
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+.search-box input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Asegurar que el campo de búsqueda ocupe el ancho completo */
+}
+
+/* Footer styles */
+.footer {
+    background-color: #2c3e50; /* Mismo color que el header */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 4px solid #d5c7a1; /* Coincide con el borde del header */
+    width: 100%;
+}
+.footer-content a {
+    color: #d5c7a1; /* Color similar al de los enlaces en el menú */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}

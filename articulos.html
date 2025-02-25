@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Articulos</title>
+        <link rel="stylesheet" href="articulos.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>CLINICA PSICOLÓGICA</h1>
+            <button class="back-button" onclick="window.history.back()">Regresar</button>
+        </header>   
+        <main class="main-content">
+            <section class="articulos-section">
+                <div class="title-box">
+                    <h2>Articulos</h2>
+                </div>
+                <div class="content-and-option">
+                    <div class="articulos-content">
+                        <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Sed eu dui vel enim ultrices vestibulum.</li>
+                        <li>Suspense vitae ipsum ac mi fermentum viverra.</li>
+                        <li>Ut molestie erat at orci volutpat laoreet.</li>
+                        <li>Donec eu lorem maximus, tincidunt justo in, convallis ante.</li>
+                        <li>Fusce tincidunt quam ac porttitor ullamcorper.</li>
+                        <li>Phasellus nec purus pellentesque, malesuada odio vitae, varius ipsum.</li>
+                        <li>Aenean a orci non turpis ultrices elementum ut eu sem.</li>
+                        </ul>
+                    </div>
+                    <aside class="option">
+                        <button class="botoncito" onclick="ordenarPorFecha()">Ordenar por fecha de subida</button>
+                        <button class="botoncito" onclick="ordenarAlfabetico()">Ordenar por orden alfabetico</button>
+                        <div class="search-box">
+                            <label for="search">Buscar</label>
+                            <input type="text" id="search" placeholder="buscar...">
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Clínica Psicológica "Alma Libre". Todos los derechos reservados.</p>
+                <p><a href="mailto:contacto@clinica.com">Contacto</a></p>
+            </div>
+        </footer>
+        <script src="articulos.js"></script>
+    </body>
+    
+</html>

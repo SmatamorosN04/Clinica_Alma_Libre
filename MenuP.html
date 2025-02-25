@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Psicológica</title>
+    <link rel="stylesheet" href="uno.css">
+</head>
+<body>
+    <header class="header">
+        <h1>CLÍNICA PSICOLÓGICA</h1>
+        <nav class="nav">
+            <ul>
+                <li class="menu-item"><a href="#" class="disabled">Crear cuenta</a></li>
+                <li class="menu-item"><a href="#" class="disabled">Inicio de sesión</a></li>
+                <li class="menu-item">
+                    <a href="#" onclick="toggleDropdown()">Información</a>
+                    <div id="info-dropdown" class="dropdown-content">
+                        <a href="articulos.html">Artículos</a>
+                        <a href="videos.html">Videos</a>
+                    </div>
+                </li>
+                <li class="menu-item"><a href="#" onclick="openModal('modal2')">Notas</a></li>
+                <li class="menu-item"><a href="citas.html">Citas</a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <main class="content">
+        <section class="intro">
+            <h2>Salud Mental</h2>
+            <h1 class="title">El porqué es importante la salud mental</h1>
+            <div class="images-text">
+                <div class="images">
+                    <img src="image1.jpg" alt="Imagen de relajación" class="image">
+                    <img src="image2.jpg" alt="Imagen de bienestar mental" class="image">
+                </div>
+                <p>La salud mental es importante porque es un derecho humano fundamental que contribuye
+                     a la calidad de vida de las personas y es parte de su bienestar general. 
+                     permite a las personas hacer frente a los momentos de estrés de la vida, desarrollar todas 
+                     sus habilidades, poder aprender y trabajar adecuadamente y contribuir a la mejora de su comunidad. </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Clínica Psicológica. Todos los derechos reservados.</p>
+            <p><a href="mailto:contacto@clinica.com">Contacto</a></p>
+        </div>
+    </footer>
+
+    <script src="MenuP.js"></script>
+</body>
+</html>

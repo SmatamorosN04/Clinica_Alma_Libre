@@ -1,0 +1,267 @@
+/* Global styles */
+* {
+    
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #a4b6d1;
+    color: #333;
+    line-height: 1.6;
+    /* Ajustar el margen de la izquierda */
+    border-color: black;
+}
+
+/* Header styles */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 4px solid #d5c7a1;
+    margin-left: 0; /* Quitar margen a la izquierda */
+    margin-right: 0; /* Quitar margen a la derecha */
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    
+}
+.disabled {
+
+    pointer-events: none;
+    color: grey; /* Opcional: Cambiar el color para mostrar que están deshabilitados */
+    text-decoration: none; /* Opcional: Eliminar el subrayado */
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+/* Navigation styles */
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+/* Estilos para el menú desplegable */
+/* Estilos para el menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #d5c7a1; /* Fondo similar al botón */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #d8b75b; /* Borde similar al hover del botón */
+    min-width: 150px;
+    border-radius: 8px; /* Bordes redondeados */
+    z-index: 1000;
+    padding: 0.5rem 0; /* Espacio interno para un aspecto más definido */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    border-radius: 6px; /* Bordes redondeados en los enlaces */
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #2c3e50; /* Fondo hover oscuro como en el botón */
+    color: white; /* Texto blanco en hover */
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #d5c7a1;
+}
+
+.nav a:hover {
+    color: white;
+    background-color: #d8b75b;
+}
+
+/* Content styles */
+.content {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 10px; /* Reducir el padding izquierdo */
+    padding-right: 10px; /* Reducir el padding derecho */
+}
+
+/* Intro estilo */
+.intro {
+    background-color: white;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center; /* Centrado del contenido */
+    padding-left: 20px; /* Menos espacio a la izquierda */
+    padding-right: 20px; /* Menos espacio a la derecha */
+    border-radius: 15px;
+    height: relative;
+    width: auto;
+    border-color: #2c3e50;
+    border-style:solid;
+}
+
+.intro h2, .intro .title {
+    text-align: center; /* Centrar los títulos */
+    color: #2c3e50;
+}
+
+.intro h2 {
+    font-size: 1.5rem;
+}
+
+.intro .title {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+}
+
+/* Layout for text and images */
+.images-text {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center; /* Centrar el contenido de las imágenes */
+    margin-left: 0; /* Eliminar margen izquierdo adicional */
+}
+
+.images {
+    float: left;
+   display: flex; 
+    flex-direction:column-reverse;
+    gap: 4rem;
+}
+
+.image {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Paragraph styling */
+.intro p {
+    font-size: 2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px; /* Limitar el tamaño del texto para mejor legibilidad */
+    text-align: center; /* Centrar el texto del párrafo */
+}
+
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    z-index: 1000; /* Aparece encima del contenido */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón para cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Estilo para los formularios dentro del modal */
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+}
+/* Footer styles */
+.footer {
+    background-color: #2c3e50; /* Mismo color que el header */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 4px solid #d5c7a1; /* Coincide con el borde del header */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content a {
+    color: #d5c7a1; /* Color similar al de los enlaces en el menú */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+
+.modal button:hover {
+    background-color: #34495e;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .images-text {
+        flex-direction: column; /* Cambiar a diseño de columna en pantallas pequeñas */
+    }
+    .image {
+        width: 100px;
+    }
+    .intro h2 {
+        font-size: 1.5rem;
+    }
+    .intro .title {
+        font-size: 2rem;
+    }
+}
+
