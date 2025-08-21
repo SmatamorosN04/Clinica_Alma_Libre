@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Citas - Clínica Psicológica</title>
+  <link rel="stylesheet" href="GestionCitas.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>CLÍNICA PSICOLÓGICA</h1>
+    <a href="MenuP.html"><button class="btn-cambiar">Regresar</button></a>
+  </header>
+
+  <main class="main-container">
+    <section class="citas">
+      <h2>Citas Solicitadas</h2>
+      <table id="tabla-citas">
+        <thead>
+          <tr>
+            <th>Paciente</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-citas">
+          <!-- JS insertará aquí las citas -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal para editar cita -->
+  <div id="modal-editar" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>Modificar Cita</h3>
+      <label for="editar-fecha">Fecha:</label>
+      <input type="date" id="editar-fecha" />
+
+      <label for="editar-hora">Hora:</label>
+      <input type="time" id="editar-hora" />
+
+      <div class="botones">
+        <button id="guardar-cambios">Guardar Cambios</button>
+        <button id="cancelar-edicion">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 Clínica Psicológica "Alma Libre". Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="GestionCitas.js"></script>
+</body>
+</html>

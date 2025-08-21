@@ -1,78 +1,66 @@
-const calendarGrid = document.getElementById('calendar-grid');
-const monthDisplay = document.getElementById('month-display');
-const modal = document.getElementById('modal');
-const timeOption = document.getElementById('time-options');
-const horaCita = document.getElementById('hora-cita');
-const fechaCita = document.getElementById('fecha-cita');
-const prevMonthButton = document.getElementById('prev-month');
-const nextMonthButton = document.getElementById('next-month');
+function cargarHistorialCitas() {
+  const usuario = localStorage.getItem('usuario');
+  if (!usuario) {
+      console.error('Usuario no encontrado en localStorage');
+      return;
+  }
 
-const date = new Date();
-const monthNames = [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
-    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-];
-const weekDays = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  fetch(`http://localhost:3000/historial-citas/${usuario}`)
+      .then(res => res.json())
+      .then(data => {
+          const tabla = document.getElementById('tabla-citas');
+          tabla.innerHTML = ''; // Limpiar tabla
 
-// Mostrar el calendario inicial
-function updateCalendar() {
-    // Mostrar el mes y el año actuales
-    monthDisplay.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+          if (data.status === 'success' && data.citas.length > 0) {
+              data.citas.forEach(cita => {
+                  const tr = document.createElement('tr');
 
-    // Limpiar el calendario actual
-    calendarGrid.innerHTML = '';
-
-    // Obtener el número de días del mes actual
-    const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-
-    // Crear los días dinámicamente
-    for (let i = 1; i <= daysInMonth; i++) {
-        const currentDate = new Date(date.getFullYear(), date.getMonth(), i); // Día específico
-        const dayOfWeek = weekDays[currentDate.getDay()]; // Día de la semana
-
-        const dayDiv = document.createElement('div');
-        dayDiv.className = 'day';
-        dayDiv.textContent = `${dayOfWeek} ${i}`;
-        dayDiv.addEventListener('click', () => openModal(i));
-        calendarGrid.appendChild(dayDiv);
-    }
+                  tr.innerHTML = `
+                    <td>${new Date(cita.fecha).toLocaleDateString()}</td>
+                    <td>${cita.hora.slice(0,5)}</td>
+                    <td>${cita.estado}</td>
+                    <td>${cita.nombre}</td>
+                  `;
+                  tabla.appendChild(tr);
+              });
+          } else {
+              tabla.innerHTML = '<tr><td colspan="4">No hay citas registradas.</td></tr>';
+          }
+      })
+      .catch(error => {
+          console.error('Error al cargar historial de citas:', error);
+      });
 }
 
-// Navegar al mes anterior
-prevMonthButton.addEventListener('click', () => {
-    date.setMonth(date.getMonth() - 1);
-    updateCalendar();
+// Llamar al cargar
+window.onload = () => {
+  cargarHistorialCitas();
+};
+const toggleDropdown = (dropdown, menu, isOpen) => {
+  dropdown.classList.toggle("open", isOpen);
+  menu.style.height = isOpen ? `${menu.scrollHeight}px` : 0;
+};
+// Close all open dropdowns
+const closeAllDropdowns = () => {
+  document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
+    toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown-menu"), false);
+  });
+};
+// Attach click event to all dropdown toggles
+document.querySelectorAll(".dropdown-toggle").forEach((dropdownToggle) => {
+  dropdownToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const dropdown = dropdownToggle.closest(".dropdown-container");
+    const menu = dropdown.querySelector(".dropdown-menu");
+    const isOpen = dropdown.classList.contains("open");
+    closeAllDropdowns(); // Close all open dropdowns
+    toggleDropdown(dropdown, menu, !isOpen); // Toggle current dropdown visibility
+  });
 });
-
-// Navegar al mes siguiente
-nextMonthButton.addEventListener('click', () => {
-    date.setMonth(date.getMonth() + 1);
-    updateCalendar();
+// Attach click event to sidebar toggle buttons
+document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    closeAllDropdowns(); // Close all open dropdowns
+    document.querySelector(".sidebar").classList.toggle("collapsed"); // Toggle collapsed class on sidebar
+  });
 });
-
-// Abrir el modal al seleccionar un día
-function openModal(day) {
-    modal.style.display = 'flex';
-    timeOption.innerHTML = '';
-    ['9:00AM', '10:00AM', '11:00AM', '2:00PM', '3:00PM', '4:00PM'].forEach(hour => {
-        const li = document.createElement('li');
-        li.textContent = hour;
-        li.addEventListener('click', () => selectTime(day, hour));
-        timeOption.appendChild(li);
-    });
-}
-
-// Seleccionar hora y cerrar el modal
-function selectTime(day, hour) {
-    fechaCita.textContent = `${day}/${date.getMonth() + 1}/${date.getFullYear()}`;
-    horaCita.textContent = hour;
-    closeModal();
-}
-
-// Cerrar el modal
-function closeModal() {
-    modal.style.display = 'none';
-}
-
-// Inicializar el calendario
-updateCalendar();

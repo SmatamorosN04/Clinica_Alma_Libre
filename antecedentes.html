@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antecedentes del Paciente</title>
+  <link rel="stylesheet" href="antecedentes.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>CLÍNICA PSICOLÓGICA</h1>
+    <button class="btn-cambiar" onclick="window.history.back()">Regresar</button>
+  </header>
+
+  <main class="main-container">
+    <section class="buscar-paciente">
+      <h2>Buscar Paciente</h2>
+<input type="text" id="buscar-paciente-input" placeholder="Buscar paciente...">
+      <ul id="lista-pacientes"></ul>
+    </section>
+
+    <section class="paciente-info" style="display:none;">
+      <h2 id="nombre-paciente">Nombre del Paciente</h2>
+    </section>
+
+    <section class="antecedentes-lista" style="display:none;">
+      <h3>Historial de Antecedentes</h3>
+      <ul id="lista-antecedentes">
+        <!-- Aquí se mostrarán las notas -->
+      </ul>
+    </section>
+
+    <section class="formulario-antecedente" style="display:none;">
+      <h3>Agregar Nuevo Antecedente</h3>
+      <textarea id="nueva-nota" placeholder="Escribe una nota clínica aquí..." rows="5"></textarea>
+      <button class="btn-agregar" onclick="agregarAntecedente()">Guardar Nota</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Clínica Psicológica "Alma Libre". Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="antecedentes.js"></script>
+</body>
+</html>

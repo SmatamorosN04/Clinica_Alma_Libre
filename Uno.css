@@ -13,6 +13,12 @@ body {
     /* Ajustar el margen de la izquierda */
     border-color: black;
 }
+.material-symbols-outlined {
+  font-size: 1.2rem; /* Ajusta según el tamaño del texto */
+  line-height: 1;
+  vertical-align: middle;
+}
+
 
 /* Header styles */
 .header {
@@ -165,60 +171,71 @@ body {
     max-width: 600px; /* Limitar el tamaño del texto para mejor legibilidad */
     text-align: center; /* Centrar el texto del párrafo */
 }
-
+/*Diseño del modal*/
 .modal {
-    display: none; /* Inicialmente oculto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-    z-index: 1000; /* Aparece encima del contenido */
-    align-items: center;
-    justify-content: center;
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* fondo semi-transparente */
+  justify-content: center;
+  align-items: center;
 }
-
-/* Contenido del modal */
 .modal-content {
-    background-color: white;
-    border-radius: 8px;
-    padding: 2rem;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: white; /* fondo blanco */
+  padding: 30px 40px;
+  border-radius: 8px;
+  width: 450px; /* más ancho para que quepan los campos */
+  max-width: 90%; /* responsivo para pantallas pequeñas */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
 }
-
-/* Botón para cerrar */
+/* Inputs y labels */
+.modal-content label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+.modal-content input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.modal-content button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-content button:hover {
+  background-color: #0056b3; /* Cambia el color al pasar el mouse */
+}
+/* Botón cerrar */
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 2rem;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
 }
 
-/* Estilo para los formularios dentro del modal */
-.modal form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.modal input {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.modal button {
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #2c3e50;
-    color: white;
-    cursor: pointer;
-}
 /* Footer styles */
 .footer {
     background-color: #2c3e50; /* Mismo color que el header */
@@ -227,7 +244,6 @@ body {
     padding: 1.5rem;
     border-top: 4px solid #d5c7a1; /* Coincide con el borde del header */
     width: 100%;
-    position: relative;
     bottom: 0;
 }
 
@@ -263,5 +279,19 @@ body {
     .intro .title {
         font-size: 2rem;
     }
+}
+/* Opcional: estilo para el checkbox y su label */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  /* Opcional: ajustar tamaño del checkbox */
+  width: 16px;
+  height: 16px;
 }
 
