@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agregar Lectura</title>
+  <link rel="stylesheet" href="agregarLecturas.css" />
+      <link rel="stylesheaet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+<!-- CKEditor 4 CDN -->
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+</head>
+<body>
+  <aside class="sidebar">
+      <!-- Sidebar Header -->
+      <header class="sidebar-header">
+       
+        <button class="sidebar-toggler">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+      </header>
+      <nav class="sidebar-nav">
+        <!-- Primary Top Nav -->
+        <ul class="nav-list primary-nav">
+
+          <li class="nav-item">
+        <a href="MenuP.html" class="nav-link">
+          <span class="material-symbols-rounded">home</span>
+          <span class="nav-label">Inicio</span>
+        </a>
+      </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown-container">
+            <a href="#" class="nav-link dropdown-toggle">
+              <span class="material-symbols-rounded">person</span>
+            
+
+              <span class="nav-label">Perfil</span>
+              <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+            </a>
+          
+            <!-- Dropdown Menu -->
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Perfil</a></li>
+              <li class="nav-item"><a href="#" class="nav-link dropdown-link" onclick="mostrarPerfil()">ver Perfil</a></li>
+              <li class="nav-item"><a href="#" class="nav-link dropdown-link">editar perfil</a></li>
+            </ul>
+          </li>
+           <li class="nav-item dropdown-container">
+            <a href="#" class="nav-link dropdown-toggle">
+              <span class="material-symbols-rounded">calendar_today</span>
+            
+
+              <span class="nav-label">Citas</span>
+              <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+            </a>
+          <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Citas</a></li>
+              <li class="nav-item"><a href="#" class="nav-link dropdown-link" onclick="verCitas()">solicitar cita</a></li>
+              <li class="nav-item"><a href="#" class="nav-link dropdown-link" onclick="historialcitas()">historial de citas</a></li>
+            </ul>
+            </li>
+          
+        <!-- Secondary Bottom Nav -->
+        <ul class="nav-list secondary-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">logout</span>
+              <span class="nav-label" onclick="cerrarSesion()">Cerrar Sesion</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  <header>
+    <h1>CLÍNICA PSICOLÓGICA</h1>
+    <div class="botones-header">
+      <h2>Menu para agregar nuevas lecturas</h2>
+    </div>
+  </header>
+
+  <main>
+    <div class="tarjeta form-container">
+      <h2>Agregar Nueva Lectura</h2>
+      <p class="palabras">Complete el siguiente formulario para registrar un nuevo artículo.</p>
+      
+      <form id="form-articulo">
+  <label for="titulo"><strong>Título:</strong></label>
+  <textarea id="titulo" placeholder="Ingrese el titulo de la lectura"></textarea>
+
+  <label for="contenido"><strong>Contenido de la lectura:</strong></label>
+  <textarea id="contenido" placeholder="Ingrese la informacion de la lectura">
+  </textarea>
+
+      <button type="submit" class="menu-btn">Guardar Lectura</button>
+</form>
+    </div>
+  </main>
+    </div>
+  </footer>
+
+
+  <!-- Quill JS -->
+  <!-- Tu script -->
+  <script src="agregarLecturas.js"></script>
+</body>
+ <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Clínica Psicológica "Alma Libre". Todos los derechos reservados.</p>
+      <p><a href="mailto:contacto@clinica.com">Contacto</a></p>
+
+       </footer>
+       <div class="background" id="perfil" style="display: none;">
+  <div class="outer-div">
+    <div class="inner-div">
+      <div class="front">
+        <div class="front__bkg-photo"></div>
+        <div class="front__face-photo" id="foto-perfil"></div>
+        <div class="front__text">
+          <h3 class="front__text-header" id="nombre-usuario">Nombre Apellido</h3>
+          <h2 id="rol-usuario">Rol</h2>
+          <p class="front__text-para">
+            <i class="fas fa-map-marker-alt front-icons"></i>
+            <span id="ubicacion-usuario">Ubicación</span>
+          </p>
+          <span class="front__text-hover">Contáctame</span>
+        </div>
+      </div>
+      <div class="back">
+        <div class="social-media-wrapper">
+          <ul>
+            <li>Edad: <span id="edad-usuario">--</span> años</li>
+            <li>Género: <span id="genero-usuario">--</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>
